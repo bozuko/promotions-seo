@@ -16,7 +16,9 @@ class PromotionsSEO_Plugin extends Promotions_Plugin_Base
    */
   public function register_tab( $tabs )
   {
-    $tabs[$this->tab_key] = $this->tab_text;
+    if( defined('WPSEO_VERSION') ){
+      $tabs[$this->tab_key] = $this->tab_text;
+    }
     return $tabs;
   }
   
